@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0003_category_tag'),
+        ('backend', '0003_category_tag'),
     ]
 
     operations = [
@@ -22,12 +22,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='category',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='posts', to='blog.category'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='posts', to='backend.category'),
         ),
         migrations.AddField(
             model_name='post',
             name='tags',
-            field=models.ManyToManyField(related_name='post', to='blog.tag'),
+            field=models.ManyToManyField(related_name='post', to='backend.tag'),
         ),
         migrations.AlterField(
             model_name='category',

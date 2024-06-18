@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0002_rename_posts_post'),
+        ('backend', '0002_rename_posts_post'),
     ]
 
     operations = [
@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=20)),
-                ('posts', models.ManyToManyField(related_name='get_categories', to='blog.post')),
+                ('posts', models.ManyToManyField(related_name='get_categories', to='backend.post')),
             ],
         ),
         migrations.CreateModel(
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('post', models.ManyToManyField(blank=True, related_name='posttags', to='blog.post')),
+                ('post', models.ManyToManyField(blank=True, related_name='posttags', to='backend.post')),
             ],
         ),
     ]
